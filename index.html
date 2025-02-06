@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<script defer type="module" src="/src/index.ts"></script>
+<script defer type="module">
+    window.sviverInit = t => {
+        const telegram = (new t(
+            import.meta.env.VITE_BOT_USERNAME,
+            import.meta.env.VITE_REDIRECT_URL,
+            {accessToWriteMessages: true, buttonStyle: 'large'}
+        ));
+
+        setTimeout(() => {
+            telegram.appendTo('#ID1')
+        }, 1000);
+
+        setTimeout(() => {
+            telegram.appendTo('#ID2')
+        }, 2000);
+
+    };
+</script>
+
+<style>
+    body {
+        display: flex;
+    }
+
+    .the-class {
+        width: 500px;
+        height: 300px;
+        border: 1px solid red;
+    }
+</style>
+<div id="ID1" class="the-class"></div>
+<div id="ID2" class="the-class"></div>
+</body>
+</html>
