@@ -121,7 +121,7 @@ export class TelegramLoginWidget {
     }
 
     configs['data-telegram-login'] = this.botName;
-    configs['data-auth-url'] = this.redirectUrl;
+    configs['data-auth-url'] = this.rebuildRedirectUrl(this.redirectUrl, this.botName);
 
     if (this.config?.accessToWriteMessages) {
       configs['data-request-access'] = 'write';
@@ -142,5 +142,13 @@ export class TelegramLoginWidget {
     }
 
     return configs;
+  }
+
+  private rebuildRedirectUrl(redirectUrl: string, botName: string): string {
+    const url = new URL(redirectUrl);
+    url.searchParams.set('bot_username', botName);
+
+    console.log(url.toString());
+    return url.toString();
   }
 }
