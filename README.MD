@@ -7,7 +7,6 @@
 ### Включение загрузки внешних скриптов.
 На странице своего сайта добавить
 ```html
-
 <script defer src="https://sviver.com/login-widget/widget.js"></script>
 <script>
     window.sviverInit = t => (new t( // 't' в данном случае это класс 'TelegramLoginWidget'
@@ -19,6 +18,11 @@
     // Так же можно установить значение в window.sviverInit асинхронно, когда понадобится. 
 </script>
 ``` 
+> **Для тестирования**
+> 
+> А для тестовой среды нужно использовать скрипт по адресу  
+> [`https://beta.sviver.com/login-widget/widget.js`](https://beta.sviver.com/login-widget/widget.js)
+
 
 ### Использование исходного кода этого репозитория
 Скопировать код из `src` в свой проект, удалив/изменив `src/Index.ts`.

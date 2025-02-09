@@ -148,7 +148,6 @@ export class TelegramLoginWidget {
     const url = new URL(redirectUrl);
     url.searchParams.set('bot_username', botName);
 
-    console.log(url.toString());
     return url.toString();
   }
 }
